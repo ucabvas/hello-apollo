@@ -1,6 +1,6 @@
 {
   "name": "hello-apollo",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -23,5 +23,9 @@
     "eslint": "^9",
     "eslint-config-next": "15.2.1",
     "@eslint/eslintrc": "^3"
+  },
+  "optionalDependencies": {
+    "@tailwindcss/oxide-linux-x64-musl": "^4.0.1",
+    "lightningcss-linux-x64-musl": "^1.29.1"
   }
 }
