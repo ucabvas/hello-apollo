@@ -13,7 +13,7 @@ jobs:
     - name: Define the image variables
       run: |
         echo "IMAGE=ucabvas/hello-apollo" >> $GITHUB_ENV
-        echo "IMAGE_VERSION=$(cat src/app/package.json | jq -r .version)" >> $GITHUB_ENV
+        echo "IMAGE_VERSION=$(cat package.json | jq -r .version)" >> $GITHUB_ENV
     - name: Build the Docker image
       run: |
         docker build --tag "$IMAGE:$IMAGE_VERSION" \

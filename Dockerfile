@@ -9,12 +9,12 @@ LABEL org.opencontainers.image.title="Hello Apollo!" \
       org.opencontainers.image.description="A Next.js app deployable via Helm" \
       org.opencontainers.image.created=$IMAGE_CREATE_DATE \
       org.opencontainers.image.version=$IMAGE_VERSION \
-      org.opencontainers.image.authors="Paul Bouwer" \
-      org.opencontainers.image.url="https://hub.docker.com/r/paulbouwer/hello-kubernetes/" \
-      org.opencontainers.image.documentation="https://github.com/paulbouwer/hello-kubernetes/README.md" \
-      org.opencontainers.image.vendor="Paul Bouwer" \
+      org.opencontainers.image.authors="Vasil Vasilev" \
+      org.opencontainers.image.url="https://hub.docker.com/r/ucabvas/hello-apollo/" \
+      org.opencontainers.image.documentation="https://github.com/ucabvas/hello-apollo/blob/develop/README.md" \
+      org.opencontainers.image.vendor="Vasil Vasilev" \
       org.opencontainers.image.licenses="MIT" \
-      org.opencontainers.image.source="https://github.com/paulbouwer/hello-kubernetes.git" \
+      org.opencontainers.image.source="https://github.com/ucabvas/hello-apollo.git" \
       org.opencontainers.image.revision=$IMAGE_SOURCE_REVISION 
 
 # Install dependencies only when needed
