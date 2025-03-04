@@ -1,0 +1,37 @@
+replicaCount: 1
+
+
+serviceAccount:
+  create: true
+
+podAnnotations: {}
+podLabels: {}
+
+podSecurityContext: {}
+
+service:
+  type: ClusterIP
+  port: 3000
+
+ingress:
+  enabled: false
+
+resources: {}
+
+livenessProbe:
+  httpGet:
+    path: /
+    port: http
+readinessProbe:
+  httpGet:
+    path: /
+    port: http
+
+volumes: []
+volumeMounts: []
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
