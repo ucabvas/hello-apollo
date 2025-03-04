@@ -7,8 +7,6 @@ serviceAccount:
 podAnnotations: {}
 podLabels: {}
 
-podSecurityContext: {}
-
 service:
   type: ClusterIP
   port: 3000
