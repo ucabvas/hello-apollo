@@ -8,9 +8,20 @@ export default function Home() {
   const [valueFromEnvironmentConfig, setValueFromEnvironmentConfig] = useState("");
 
   useEffect(() => {
-    setValueFromSecret(process.env.NEXT_PUBLIC_VALUE_FROM_SECRET || "");
-    setValueFromModuleVariable(process.env.NEXT_PUBLIC_VALUE_FROM_MODULE_VARIABLE || "");
-    setValueFromEnvironmentConfig(process.env.NEXT_PUBLIC_VALUE_FROM_ENVIRONMENT_CONFIG || "");
+    async function fetchEnvVars() {
+      try {
+        const response = await fetch('/api/hello');
+        const data = await response.json();
+        
+        setValueFromSecret(data.env.NEXT_PUBLIC_VALUE_FROM_SECRET);
+        setValueFromModuleVariable(data.env.NEXT_PUBLIC_VALUE_FROM_MODULE_VARIABLE);
+        setValueFromEnvironmentConfig(data.env.NEXT_PUBLIC_VALUE_FROM_ENVIRONMENT_CONFIG);
+      } catch (error) {
+        console.error("Error fetching environment variables:", error);
+      }
+    }
+    
+    fetchEnvVars();
   }, []);
 
   return (
