@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   hello-apollo:
   - apiVersion: v2
+    appVersion: 0.0.9
+    created: "2025-08-12T08:12:05.369759645Z"
+    description: A Next.js app deployable via Helm
+    digest: 830ed04e0779b3538b84d4f470289f6cd40886b7f551725c51a78c7529154dad
+    name: hello-apollo
+    type: application
+    urls:
+    - https://github.com/ucabvas/hello-apollo/releases/download/hello-apollo-0.0.9/hello-apollo-0.0.9.tgz
+    version: 0.0.9
+  - apiVersion: v2
     appVersion: 0.0.8
     created: "2025-05-06T08:24:26.533766814Z"
     description: A Next.js app deployable via Helm
@@ -81,4 +91,4 @@ entries:
     urls:
     - https://github.com/ucabvas/hello-apollo/releases/download/hello-apollo-0.0.1/hello-apollo-0.0.1.tgz
     version: 0.0.1
-generated: "2025-05-06T08:24:26.533784196Z"
+generated: "2025-08-12T08:12:05.36979411Z"
