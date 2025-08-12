@@ -1,0 +1,36 @@
+name: "HelloApollo"
+displayName: "Hello Apollo"
+description: "A deployment of the Hello Apollo application alongside its dependencies."
+variables:
+  namespace:
+    type: string
+    string:
+      description: "The namespace for the Hello Apollo deployment."
+      default: "hello-apollo"
+  moduleVariableDisplayedOnTheHomepage:
+    type: string
+    string:
+      description: "This module variable gets displayed on the homepage."
+entities:
+  - type: helmChart
+    helmChart:
+      entityName: hello-apollo
+      productId: com.palantir.demo:hello-apollo
+      k8sNamespace: "{{ moduleVariable.namespace }}"
+      secretRequirements:
+        secretdisplayedonthehomepage:
+          type: multikey
+          multikey:
+            description: "This secret gets displayed on the homepage."
+            keys:
+              - value
+      configOverrides: |
+        "0.0.9":
+          overrides:
+            config:
+              valueFromModuleVariable: "{{ moduleVariable.moduleVariableDisplayedOnTheHomepage }}"
+              valueFromSecret:
+                secretName: '{{ preprocess .Values.apollo.secrets.secretdisplayedonthehomepage.k8sSecretName }}'
+                key: value
+              valueFromEnvironmentConfig: '{{ preprocess .Values.apollo.environment.configDisplayedOnTheHomepage }}'
+

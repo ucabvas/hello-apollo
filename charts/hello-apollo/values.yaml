@@ -1,20 +1,14 @@
 replicaCount: 1
 
 config:
-  superSecret:
-    name: super-secret-name
-  notSoSecret: not-so-secret-value
+  valueFromSecret:
+    secretName: super-secret-name
+    key: value
+  valueFromModuleVariable: module-variable-value
+  valueFromEnvironmentConfig: environment-config-value
 
 serviceAccount:
   create: true
-
-valueFromSecret:
-  secretName: super-secret-name
-  key: value
-
-valueFromModuleVariable: module-variable-value
-
-valueFromEnvironmentConfig: environment-config-value
 
 podAnnotations: {}
 podLabels: {}
