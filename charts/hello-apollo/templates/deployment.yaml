@@ -39,6 +39,22 @@ spec:
               type: RuntimeDefault
           image: "docker.io/ucabvas/hello-apollo:{{ .Chart.AppVersion }}"
           imagePullPolicy: IfNotPresent
+          env:
+            {{- if .Values.config.valueFromSecret }}
+            - name: NEXT_PUBLIC_VALUE_FROM_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.config.valueFromSecret.secretName | quote }}
+                  key: {{ .Values.config.valueFromSecret.key | quote }}
+            {{- end }}
+            {{- if .Values.config.valueFromModuleVariable }}
+            - name: NEXT_PUBLIC_VALUE_FROM_MODULE_VARIABLE
+              value: {{ .Values.config.valueFromModuleVariable | quote }}
+            {{- end }}
+            {{- if .Values.config.valueFromEnvironmentConfig }}
+            - name: NEXT_PUBLIC_VALUE_FROM_ENVIRONMENT_CONFIG
+              value: {{ .Values.config.valueFromEnvironmentConfig | quote }}
+            {{- end }}
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}

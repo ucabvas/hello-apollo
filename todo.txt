@@ -1,1 +1,0 @@
-(vasilev): create an apollo manifest
