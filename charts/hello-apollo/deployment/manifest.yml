@@ -1,13 +1,13 @@
 manifest-version: "1.0"
 product-group: com.palantir.demo
 product-name: hello-apollo
-product-version: 0.0.9
+product-version: 0.0.11
 product-type: helm-chart.v1
 extensions:
   helm-chart:
     helm-chart-name: hello-apollo
-    helm-chart-version: 0.0.9
+    helm-chart-version: 0.0.11
     helm-repository-url: "https://ucabvas.github.io/hello-apollo"
   artifacts:
     - type: oci
-      uri: docker.io/ucabvas/hello-apollo:0.0.9
+      uri: docker.io/ucabvas/hello-apollo:0.0.11
