@@ -35,6 +35,10 @@ COPY . .
 
 ENV NEXT_TELEMETRY_DISABLED=1
 
+ENV NEXT_PUBLIC_VALUE_FROM_SECRET=NEXT_PUBLIC_VALUE_FROM_SECRET
+ENV NEXT_PUBLIC_VALUE_FROM_MODULE_VARIABLE=NEXT_PUBLIC_VALUE_FROM_MODULE_VARIABLE
+ENV NEXT_PUBLIC_VALUE_FROM_ENVIRONMENT_CONFIG=NEXT_PUBLIC_VALUE_FROM_ENVIRONMENT_CONFIG
+
 RUN npm run build
 
 # Production image, copy all the files and run next
@@ -62,4 +66,7 @@ ENV PORT=3000
 # server.js is created by next build from the standalone output
 # https://nextjs.org/docs/pages/api-reference/config/next-config-js/output
 ENV HOSTNAME="0.0.0.0"
+COPY entrypoint.sh /usr/bin/
+RUN chmod +x /usr/bin/entrypoint.sh
+ENTRYPOINT ["entrypoint.sh"]
 CMD ["node", "server.js"]
