@@ -1,5 +1,5 @@
 # syntax=docker.io/docker/dockerfile:1
-FROM node:24-slim AS base
+FROM node:24-alpine AS base
 
 ARG IMAGE_CREATE_DATE
 ARG IMAGE_VERSION
