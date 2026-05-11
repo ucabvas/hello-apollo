@@ -2,6 +2,7 @@
   "name": "hello-apollo",
   "version": "0.0.18",
   "private": true,
+  "packageManager": "npm@11.14.1",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
