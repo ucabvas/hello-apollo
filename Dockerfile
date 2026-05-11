@@ -26,9 +26,7 @@ WORKDIR /app
 
 # Install dependencies based on the preferred package manager
 COPY package.json package-lock.json* ./
-RUN npm install -g npm@11.14.1 && \
-    (npm ci --foreground-scripts || \
-     (echo "===NPM DEBUG LOG===" && cat /root/.npm/_logs/*-debug-0.log && exit 1))
+RUN npm ci
 
 # Rebuild the source code only when needed
 FROM base AS builder
