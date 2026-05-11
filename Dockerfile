@@ -26,7 +26,7 @@ WORKDIR /app
 
 # Install dependencies based on the preferred package manager
 COPY package.json package-lock.json* ./
-RUN corepack enable && npm ci
+RUN npm install -g npm@11.14.1 && npm ci
 
 # Rebuild the source code only when needed
 FROM base AS builder
