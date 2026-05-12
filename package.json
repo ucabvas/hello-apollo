@@ -1,6 +1,6 @@
 {
   "name": "hello-apollo",
-  "version": "0.0.19-rc7",
+  "version": "0.0.19-rc8",
   "private": true,
   "packageManager": "npm@11.14.1",
   "scripts": {
