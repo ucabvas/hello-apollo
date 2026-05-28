@@ -4,6 +4,7 @@ config:
   valueFromSecret:
     secretName: super-secret-name
     key: value
+    optional: true
   valueFromModuleVariable: module-variable-value
   valueFromEnvironmentConfig: environment-config-value
 

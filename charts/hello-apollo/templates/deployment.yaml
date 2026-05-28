@@ -46,6 +46,7 @@ spec:
                 secretKeyRef:
                   name: {{ .Values.config.valueFromSecret.secretName | quote }}
                   key: {{ .Values.config.valueFromSecret.key | quote }}
+                  optional: {{ .Values.config.valueFromSecret.optional | default false }}
             {{- end }}
             {{- if .Values.config.valueFromModuleVariable }}
             - name: NEXT_PUBLIC_VALUE_FROM_MODULE_VARIABLE
